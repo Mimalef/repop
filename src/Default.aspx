@@ -16,8 +16,12 @@
         </div>
         <div id="nav">
         
-            <asp:Button ID="Button1" runat="server" Text="پنل مشتری" class="button" />
-            <asp:Button ID="Button2" runat="server" Text="پنل پرسنل" class="button" />
+            <asp:LinkButton ID="LinkButton1" class="button" runat="server" 
+                PostBackUrl="~/CustomerLogin.aspx">پنل مشتری</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton2" class="button" runat="server" 
+                PostBackUrl="~/PersonnelLogin.aspx">پنل پرسنل</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton3" class="button" runat="server" 
+                PostBackUrl="~/ManagerLogin.aspx">پنل مدیر</asp:LinkButton>
             
         </div>
         <div id="footer">
