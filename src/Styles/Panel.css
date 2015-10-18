@@ -1,4 +1,8 @@
-﻿#nav {
+﻿body 
+{
+    font-family:  "B Titr", Tahoma, Serif;
+}
+#nav {
     background-color: #DDD;
     position: absolute;
     width: 250px;
@@ -7,12 +11,14 @@
     right: 0;
     top: 0;
 }
-#logo {
+.logo {
     margin-right: auto;
     margin-left: auto;
     display: block;
     height: 100px;
     width: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 #nav a {
     background-color: #3F015A;
@@ -86,4 +92,3 @@
 .success {
     background-color: #2AC602;
 }
-
