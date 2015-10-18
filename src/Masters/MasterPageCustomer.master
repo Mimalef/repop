@@ -1,0 +1,14 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Masters/MasterPagePanel.master" AutoEventWireup="false" CodeFile="MasterPageCustomer.master.cs" Inherits="MasterPageCustomer" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="nav">
+        <asp:Image ID="Logo" class="logo" runat="server" ImageUrl="~/Images/Logo.png" />
+        <asp:LinkButton ID="LinkButtonLogout" class="button" runat="server" PostBackUrl="~/Logout.aspx">خروج</asp:LinkButton>
+    </div>
+    <div id="content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
