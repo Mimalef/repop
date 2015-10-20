@@ -1,9 +1,28 @@
 ﻿body 
 {
-    font-family:  "B Titr", Tahoma, Serif;
+    font-family:  Tahoma, Serif;
+    direction: rtl;
 }
-#nav {
+input, select
+{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    padding: 10px;
+}
+input
+{
+    width: 230px;
+}
+select
+{
+    width: 250px;
+}
+#nav
+{
     background-color: #DDD;
+    font-family:  "B Titr";
     position: absolute;
     width: 250px;
     float: right;
@@ -11,16 +30,8 @@
     right: 0;
     top: 0;
 }
-.logo {
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    height: 100px;
-    width: 100px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-#nav a {
+#nav a
+{
     background-color: #3F015A;
     text-decoration: none;
     margin-bottom: 10px;
@@ -33,10 +44,12 @@
     width: 200px;
     color: #DDD;
 }
-#nav a:hover {
+#nav a:hover 
+{
     background-color: #444;
 }
-#content {
+#content
+{
     text-align: center;
     overflow: scroll;
     position: fixed;
@@ -47,12 +60,28 @@
     right: 0;
     top: 0;
 }
-#content form, #content p, #content h1 {
+.center 
+{
     vertical-align: middle;
     padding-right: 250px;
     display: table-cell;
 }
-#content table {
+.logo
+{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    height: 100px;
+    width: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.form
+{
+    margin: auto;
+    width: 0;
+}
+.list-table {
     vertical-align: middle;
     padding-right: 280px;
     padding-bottom: 30px;
@@ -60,35 +89,25 @@
     padding-top: 30px;
     width: 100%;
 }
-#content table td {
+.list-table td {
     border-style: solid;
     border-width: thin;
     border-color: #DDD;
     height: 40px;
 }
-#content input, #content select {
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    padding: 10px;
-}
-#content input {
-    width: 230px;
-}
-#content select {
-    width: 250px;
-}
-.msg {
+.msg
+{
     margin-right: 250px;
     text-align: center;
     line-height: 40px;
     display: block;
     width: 400px;
 }
-.error {
+.error
+{
     background-color: #DD0A0A;
 }
-.success {
+.success
+{
     background-color: #2AC602;
 }
