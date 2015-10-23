@@ -15,6 +15,15 @@ public partial class PublicSuccess : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Request.QueryString["message"] != null)
+        {
+            LinkButtonReturn.PostBackUrl = Request.QueryString["redirect"];
+            LabelMessage.Text = Request.QueryString["message"];
+        }
+        else
+        {
+            LinkButtonReturn.PostBackUrl = "~/Default.aspx";
+            LabelMessage.Text = "خطا";
+        }
     }
 }

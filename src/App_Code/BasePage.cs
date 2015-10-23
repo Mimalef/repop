@@ -16,11 +16,22 @@ public class BasePage : System.Web.UI.Page
     private string connectionString = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
     private string currentUrl = HttpContext.Current.Request.Url.AbsolutePath;
 
-    private void sqlError()
+    public void showError(string messsage)
     {
-        Response.Cookies["error_message"].Value = "خطای پایگاه داده.";
-        Response.Cookies["error_redirect"].Value = this.currentUrl;
-        Response.Redirect("PublicError.aspx");
+        string url = "PublicError.aspx?";
+        url += "redirect=" + this.currentUrl;
+        url += "&message=" + messsage;
+
+        Response.Redirect(url);
+    }
+
+    public void showSuccess(string messsage)
+    {
+        string url = "PublicSuccess.aspx?";
+        url += "redirect=" + this.currentUrl;
+        url += "&message=" + messsage;
+
+        Response.Redirect(url);
     }
 
     public void insertQuery(string sql)
@@ -39,7 +50,7 @@ public class BasePage : System.Web.UI.Page
         }
         catch
         {
-            sqlError();
+            showError("خطای پایگاه داده.");
         }
         finally
         {
@@ -66,7 +77,7 @@ public class BasePage : System.Web.UI.Page
         }
         catch
         {
-            sqlError();
+            showError("خطای پایگاه داده.");
         }
         finally
         {

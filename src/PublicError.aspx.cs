@@ -15,10 +15,10 @@ public partial class PublicError : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Response.Cookies["error_redirect"].Value != null)
+        if (Request.QueryString["message"] != null)
         {
-            LinkButtonReturn.PostBackUrl = Response.Cookies["error_redirect"].Value;
-            LabelMessage.Text = Response.Cookies["error_message"].Value;
+            LinkButtonReturn.PostBackUrl = Request.QueryString["redirect"];
+            LabelMessage.Text = Request.QueryString["message"];
         }
         else
         {
