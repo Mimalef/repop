@@ -11,10 +11,23 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
-public partial class ManagerListPersonnel : System.Web.UI.Page
+public partial class ManagerListPersonnel : BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        string sql = @"
+            SELECT
+                id,
+                first_name,
+                last_name,
+                telephone,
+                username,
+                password
+            FROM
+                personnels";
 
+        sql = string.Format(sql);
+
+        fillTable(sql, ref TablePersonnels);
     }
 }
