@@ -27,7 +27,7 @@ public partial class CustomerLogin : BasePage
             TextBoxUsername.Text, 
             TextBoxPassword.Text);
 
-        DataTable table = doQuery(sql);
+        DataTable table = selectQuery(sql);
 
         if (table.Rows.Count > 0)
         {

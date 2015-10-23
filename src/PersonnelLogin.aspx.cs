@@ -11,10 +11,27 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
-public partial class PersonnelLogin : System.Web.UI.Page
+public partial class PersonnelLogin : BasePage
 {
-    protected void Page_Load(object sender, EventArgs e)
+    protected void ButtonLogin_Click(object sender, EventArgs e)
     {
+        string sql = @"
+            SELECT *
+            FROM personnels
+            WHERE username = '{0}'
+            AND password = '{1}'";
 
+        sql = string.Format(
+            sql,
+            TextBoxUsername.Text,
+            TextBoxPassword.Text);
+
+        DataTable table = selectQuery(sql);
+
+        if (table.Rows.Count > 0)
+        {
+            Session["personnel"] = table.Rows[0]["id"];
+            Response.Redirect("~/PersonnelPanel.aspx");
+        }
     }
 }
