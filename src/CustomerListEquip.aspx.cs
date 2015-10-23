@@ -16,9 +16,17 @@ public partial class CustomerListEquip : BasePage
     protected void Page_Load(object sender, EventArgs e)
     {
         string sql = @"
-            SELECT *
-            FROM equipments
-            WHERE customer = '{0}'";
+            SELECT
+                id,
+                type,
+                brand,
+                model,
+                status,
+                customer
+            FROM
+                equipments
+            WHERE
+                customer = '{0}'";
 
         sql = string.Format(
             sql,

@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html dir="rtl">
 <head id="Head1" runat="server">
     <title>تعمیرگاه</title>
     <link href="Styles/Default.css" rel="stylesheet" type="text/css" />
@@ -30,4 +30,3 @@
     </form>
 </body>
 </html>
-

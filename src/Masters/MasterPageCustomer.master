@@ -5,7 +5,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div id="nav">
         <asp:Image ID="Logo" class="logo" runat="server" ImageUrl="~/Images/Logo.png" />
-        <asp:LinkButton ID="LinkButtonLogout" class="button" runat="server" PostBackUrl="~/Logout.aspx">خروج</asp:LinkButton>
+        <% if (Session != null && Session["customer"] != null) { %>
+            <asp:LinkButton ID="LinkButtonLogout" class="button" runat="server" PostBackUrl="~/PublicLogout.aspx">خروج</asp:LinkButton>
+        <% } %>
     </div>
     <div id="content">
         <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">

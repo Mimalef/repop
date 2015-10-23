@@ -1,4 +1,4 @@
-﻿body 
+﻿body
 {
     font-family:  Tahoma, Serif;
     direction: rtl;
@@ -15,7 +15,7 @@
     right: 0;
     top: 0;
 }
-.center 
+.center
 {
     vertical-align: middle;
     display: table-cell;

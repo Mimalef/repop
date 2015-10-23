@@ -21,11 +21,10 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:Button ID="ButtonLogin" class="button" runat="server" Text="ورود" 
+                    <asp:Button ID="ButtonLogin" class="button" runat="server" Text="ورود"
                         onclick="ButtonLogin_Click"  />
                 </td>
             </tr>
         </table>
     </div>
 </asp:Content>
-

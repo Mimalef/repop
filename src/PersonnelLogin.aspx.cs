@@ -16,10 +16,14 @@ public partial class PersonnelLogin : BasePage
     protected void ButtonLogin_Click(object sender, EventArgs e)
     {
         string sql = @"
-            SELECT *
-            FROM personnels
-            WHERE username = '{0}'
-            AND password = '{1}'";
+            SELECT
+                id
+            FROM
+                personnels
+            WHERE
+                username = '{0}'
+            AND
+                password = '{1}'";
 
         sql = string.Format(
             sql,
