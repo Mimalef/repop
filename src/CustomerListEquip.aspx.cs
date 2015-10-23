@@ -16,33 +16,14 @@ public partial class CustomerListEquip : BasePage
     protected void Page_Load(object sender, EventArgs e)
     {
         string sql = @"
-            SELECT * 
-            FROM equipments 
+            SELECT *
+            FROM equipments
             WHERE customer = '{0}'";
 
         sql = string.Format(
             sql,
             Session["customer"]);
 
-        DataTable table = doQuery(sql);
-
-        foreach(DataRow row in table.Rows)
-        {
-            TableRow trow = new TableRow();
-
-            for (int i = 0; i < table.Columns.Count; i++)
-            {
-                if (table.Columns[i].ColumnName == "customer") continue;
-                if (table.Columns[i].ColumnName == "id") continue;
-                
-                TableCell cell = new TableCell();
-
-                cell.Text = row[i].ToString();
-                
-                trow.Cells.Add(cell);
-            }
-
-            TableEquipments.Rows.Add(trow);
-        }
+        fillTable(sql, ref TableEquipments);
     }
 }
