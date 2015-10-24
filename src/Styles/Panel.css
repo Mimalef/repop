@@ -22,7 +22,6 @@ select
 #nav
 {
     background-color: #DDD;
-    font-family:  "B Titr";
     position: absolute;
     width: 250px;
     float: right;
@@ -33,6 +32,7 @@ select
 #nav a, .button
 {
     background-color: #3F015A;
+    font-family: "B Titr";
     text-decoration: none;
     margin-bottom: 10px;
     text-align: center;
@@ -89,7 +89,9 @@ select
     padding-top: 30px;
     width: 100%;
 }
-.list-table td {
+.list-table td 
+{
+    text-align: center;
     border-style: solid;
     border-width: thin;
     border-color: #DDD;

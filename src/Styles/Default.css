@@ -1,10 +1,12 @@
 ﻿body
 {
+    font-family:  Tahoma, Serif;
     margin-bottom: 20px;
     margin-right: auto;
     text-align: center;
     margin-left: auto;
     margin-top: 10px;
+    direction: rtl;
     width: 1000px;
     padding: 0;
 }
@@ -24,6 +26,7 @@
 .button
 {
     background-color: #3F015A;
+    font-family: "B Titr";
     display: inline-block;
     text-decoration: none;
     line-height: 200px;
