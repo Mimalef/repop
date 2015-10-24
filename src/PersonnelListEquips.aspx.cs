@@ -17,12 +17,12 @@ public partial class PersonnelListEquip : BasePage
     {
         string sql = @"
             SELECT
-                id,
-                type,
-                brand,
-                model,
-                status,
-                customer
+                id AS 'کد',
+                type AS 'نوع',
+                brand AS 'برند',
+                model AS 'مدل',
+                status AS 'وضعیت',
+                customer AS 'کد مشتری'
             FROM
                 equipments";
 
