@@ -15,9 +15,11 @@ public partial class PersonnelEditEquip : BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Request.QueryString["equip"] != null)
+        if (!Page.IsPostBack)
         {
-            string sql = @"
+            if (Request.QueryString["equip"] != null)
+            {
+                string sql = @"
                 SELECT
                     type,
                     brand,
@@ -29,21 +31,22 @@ public partial class PersonnelEditEquip : BasePage
                 WHERE
                    id = {0}";
 
-            sql = string.Format(
-                sql,
-                Request.QueryString["equip"]);
+                sql = string.Format(
+                    sql,
+                    Request.QueryString["equip"]);
 
-            DataTable table = selectQuery(sql);
+                DataTable table = selectQuery(sql);
 
-            DropDownListType.Text = table.Rows[0]["type"].ToString();
-            DropDownListBrand.Text = table.Rows[0]["brand"].ToString();
-            TextBoxModel.Text = table.Rows[0]["model"].ToString();
-            DropDownListStatus.Text = table.Rows[0]["status"].ToString();
-            TextBoxCustomer.Text = table.Rows[0]["customer"].ToString();
-        }
-        else
-        {
-            showError("خطا در دربافت اطلاعات.");
+                DropDownListType.Text = table.Rows[0]["type"].ToString();
+                DropDownListBrand.Text = table.Rows[0]["brand"].ToString();
+                TextBoxModel.Text = table.Rows[0]["model"].ToString();
+                DropDownListStatus.Text = table.Rows[0]["status"].ToString();
+                TextBoxCustomer.Text = table.Rows[0]["customer"].ToString();
+            }
+            else
+            {
+                showError("خطا در دربافت اطلاعات.");
+            }
         }
     }
     protected void ButtonEdit_Click(object sender, EventArgs e)
@@ -70,6 +73,6 @@ public partial class PersonnelEditEquip : BasePage
             Request.QueryString["equip"]);
 
         insertQuery(sql);
-        showSuccess("عملیات با موفقیت انجام شد.");
+        Response.Redirect("~/PersonnelListEquips.aspx");
     }
 }
