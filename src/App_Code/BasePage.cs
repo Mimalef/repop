@@ -90,6 +90,19 @@ public class BasePage : System.Web.UI.Page
     public void fillTable(string sql, ref Table table)
     {
         DataTable dataTable = selectQuery(sql);
+
+        TableHeaderRow th = new TableHeaderRow();
+
+        for (int i = 0; i < dataTable.Columns.Count; i++)
+        {
+            TableHeaderCell cell = new TableHeaderCell();
+
+            cell.Text = dataTable.Columns[i].ColumnName;
+
+            th.Cells.Add(cell);
+        }
+
+        table.Rows.Add(th);
         
         foreach (DataRow row in dataTable.Rows)
         {
@@ -110,7 +123,7 @@ public class BasePage : System.Web.UI.Page
                 LinkButton edit = new LinkButton();
                 
                 edit.PostBackUrl = "~/PersonnelEditEquip.aspx?equip=";
-                edit.PostBackUrl += row["id"].ToString();
+                edit.PostBackUrl += row[0].ToString();
                 edit.Text = "ویرایش";
 
                 cell.Controls.Add(edit);
