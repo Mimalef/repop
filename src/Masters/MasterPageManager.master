@@ -6,9 +6,9 @@
     <div id="nav">
         <asp:Image ID="Logo" class="logo" runat="server" ImageUrl="~/Images/Logo.png" />
         <% if (Session != null && Session["manager"] != null) { %>
-            <asp:LinkButton ID="LinkButton1" class="button" runat="server">افزودن پرسنل</asp:LinkButton>
-            <asp:LinkButton ID="LinkButton2" class="button" runat="server">لیست پرسنل ها</asp:LinkButton>
-            <asp:LinkButton ID="LinkButton4" class="button" runat="server">لیست مشتری ها</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton1" class="button" runat="server" PostBackUrl="~/ManagerAddPersonnel.aspx">افزودن پرسنل</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton2" class="button" runat="server" PostBackUrl="~/ManagerListPersonnels.aspx">لیست پرسنل ها</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton4" class="button" runat="server" PostBackUrl="~/ManagerListCustomers.aspx">لیست مشتری ها</asp:LinkButton>
             <asp:LinkButton ID="LinkButtonLogout" class="button" runat="server" PostBackUrl="~/PublicLogout.aspx">خروج</asp:LinkButton>
         <% } %>
     </div>
