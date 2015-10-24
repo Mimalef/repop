@@ -17,13 +17,13 @@ public partial class ManagerListCustomers : BasePage
     {
         string sql = @"
             SELECT
-                id,
-                first_name,
-                last_name,
-                telephone,
-                address,
-                username,
-                password
+                id AS 'کد',
+                first_name AS 'نام',
+                last_name AS 'فامیل',
+                telephone AS 'تلفن',
+                address AS 'آدرس',
+                username AS 'کاربری',
+                password AS 'گذرواژه'
             FROM
                 customers";
 

@@ -21,8 +21,7 @@ public partial class CustomerListEquip : BasePage
                 type,
                 brand,
                 model,
-                status,
-                customer
+                status
             FROM
                 equipments
             WHERE

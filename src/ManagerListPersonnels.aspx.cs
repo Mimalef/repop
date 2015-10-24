@@ -17,12 +17,12 @@ public partial class ManagerListPersonnel : BasePage
     {
         string sql = @"
             SELECT
-                id,
-                first_name,
-                last_name,
-                telephone,
-                username,
-                password
+                id AS 'کد',
+                first_name AS 'نام',
+                last_name AS 'فامیل',
+                telephone AS 'تلفن',
+                username AS 'کاربری',
+                password AS 'گذرواژه'
             FROM
                 personnels";
 
